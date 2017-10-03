@@ -20,6 +20,13 @@ Loader::import('wxpay.lib.WxPayJsPay');
 */
 class JsapiPay extends WxPayBase
 {
+    public static function getOpenId($code="")
+    {
+        $tools = new \WxPayJsPay();
+        $openId = $tools->GetOpenid($code);
+        return $openId;
+    }
+
     /**
      * 获取支付参数
      * @param  array $params 订单数组

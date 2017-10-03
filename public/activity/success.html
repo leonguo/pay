@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <meta charset="utf-8"> 
+    <meta content="yes" name="apple-mobile-web-app-capable"> 
+    <meta content="telephone=no,email=no" name="format-detection"> 
+    <script type="text/javascript" async src="./flexible.js"></script>
+    <style>@charset "utf-8";html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{font-family:sans-serif}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a:hover{text-decoration:underline}ins,a{text-decoration:none}</style>
+    <title>报名成功</title>
+    <style>
+      body {
+  background-color: #f1f1f4;
+  height: 100%; }
+  .success .note {
+    text-align: center;
+    margin-bottom: 0.21333rem;
+    padding-bottom: 0.8rem;
+    background-color: #fff; }
+    .success .note .img {
+      margin: 0 auto;
+      margin-top: 1.01333rem;
+      width: 2.48rem;
+      height: 2.48rem;
+      margin-bottom: 0.64rem; }
+    .success .note .result {
+      font-size: 0.53333rem;
+      color: #000;
+      margin-bottom: 0.21333rem; }
+    .success .note .reason {
+      color: #888;
+      font-size: 0.37333rem; }
+  .success .success-info {
+    background-color: #fff;
+    padding-left: 0.42667rem;
+    padding-right: 0.42667rem;
+    padding-top: 0.21333rem;
+    padding-bottom: 0.21333rem; }
+    .success .success-info p {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      line-height: 0.8rem;
+      font-size: 0.37333rem;
+      color: #666; }
+      .success .success-info p .title {
+        color: #999; }
+    </style>
+    <script>
+      var obj={};
+      window.location.search.replace('?', "").split("&").map((item)=>{
+        var query = item.split('=');
+        console.log(query[0])
+        obj[query[0]] = query[1];
+      })
+    </script>
+  </head> 
+  <body > 
+    <section class="success">
+      <div class="note">
+        <div class="img">
+          <img src="./imgs/success.png" width='100%' alt="">
+        </div>
+        <p class='result'>报名成功</p>
+        <p class='reason'>
+          不见不散
+        </p>
+      </div>
+      <div class='success-info'>
+        <p class="flex">
+          <span class='title'>活动</span>
+          <span class='activity'>
+          </span>
+        </p>
+        <p class="flex">
+          <span class='title'>时间</span>
+          <span class="date">
+          </span>
+        </p>
+        <p class="flex">
+          <span class='title'>地点</span>
+          <span class="address">
+          </span>
+        </p>
+        <p class="flex">
+          <span class='title'>订单号</span>
+          <span class='order-num'>
+          </span>
+        </p>
+      </div>
+    </section>
+    <script src='./jquery-3.2.1.min.js'></script>
+    <script >
+      $('body').css({
+        minHeight: window.innerHeight +  "px"
+      })
+
+      $.ajax({
+        url: 'http://wxpay.nicefilm.com/view/order/activityinfo.php',
+        type: 'GET',
+        success: function(dataAll) {
+          $('.activity').text(dataAll.data.name);
+          $('.date').text(dataAll.data.date);
+          $('.address').text(dataAll.data.address);
+          var order_id = window.localStorage.getItem('order_id');
+          if(order_id) $('.order-num').text(order_id);
+        },
+        error: function () {
+          alert('获取活动信息失败');
+        }
+      })
+    </script>
+  </body>
+</html>

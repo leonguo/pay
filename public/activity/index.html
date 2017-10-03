@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="telephone=no,email=no" name="format-detection">
+  <script type="text/javascript" async src="./flexible.js"></script>
+  <style>@charset "utf-8";html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{font-family:sans-serif}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a:hover{text-decoration:underline}ins,a{text-decoration:none}</style>
+  <link rel="stylesheet" href="./main.css"></link>
+  <title>活动报名</title>
+  <script src="./jquery-3.2.1.min.js"></script>
+  <script src="./jquery.cookie.js"></script>
+</head>
+<body >
+<div class='main'>
+  <div class="banner">
+    <img src="./imgs/image.png" alt="" width='100%'>
+  </div>
+  <span id="openid" hidden="hidden"></span>
+  <div class="title">
+    <p id="activityTitle" class='title-left'>
+
+    </p>
+    <span id="activityPrice" ><i>￥</i>
+
+        </span>
+  </div>
+  <div class="info">
+    <ul>
+      <li>
+        <span class="info-left">时间：</span>
+        <p id="activityTime" class="info-detail">
+
+        </p>
+      </li>
+      <li>
+        <span class="info-left">地点：</span>
+        <p id="activityAddress" class="info-detail">
+
+        </p>
+      </li>
+      <li>
+        <span class="info-left">数量：</span>
+        <div class="count">
+          <button class="minus default"></button>
+          <span>1</span>
+          <button class="add"></button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="detail">
+    <label for="">预约人：</label>
+    <input type="text" name='name'>
+    <label for="">联系方式：</label>
+    <input type="tel" name='tel'>
+  </div>
+  <div class="footer">
+    <div class='footer-left'>
+      <span>合计：</span><i>￥</i><span id="cost" class='total' >
+
+          </span>
+    </div>
+    <button type='btn' class='submit'>提交信息</button>
+  </div>
+</div>
+<div class='confirm'>
+  <section class="info clear">
+    <p class="title" id="activityTitle1">
+
+    </p>
+    <p class="time" id="activityTime1">
+
+    </p>
+    <div class="address">
+      <span>地点：</span>
+      <div id="activityAddress1" >
+
+      </div>
+    </div>
+    <i></i>
+    <p class="name">预约人：
+      <span>
+
+          </span>
+    </p>
+    <p class="tel">联系方式：
+      <span>
+          </span>
+    </p>
+  </section>
+  <section class='price'>
+    <span>总价：</span>
+    <span class='count'><i>￥</i>
+          <span class="activityPriceAll">
+
+          </span>
+        </span>
+  </section>
+  <section class="state">
+    <p>支付说明</p>
+    <ul>
+      <li>因用户原因不能参加，不可退款。</li>
+      <li>活动如若取消，票款将原路返回。</li>
+    </ul>
+  </section>
+  <section class="footer">
+    <div class='footer-left'>
+      <span>合计：</span><i>￥</i><span class='total'></span>
+    </div>
+    <button type='btn' class='submit'>确认支付</button>
+  </section>
+</div>
+<div class="scan-img">
+  <p class='img-note'>
+    长按二维码扫描支付
+  </p>
+  <img src="" alt="">
+</div>
+<script src='./main.js'></script>
+</body>
+</html>
